@@ -1,3 +1,4 @@
 # ⚙ Flemish Factcheck API
 
-Flemish Factcheck API is a Python (Flask) RESTful web service.
+This project crawls Flemish factchecking sites (sites listed below), extracts all the relevant information and makes it available via a Python (Flask) RESTful API.
+

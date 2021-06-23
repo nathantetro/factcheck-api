@@ -1,17 +1,30 @@
 import json
-from flask import Flask, jsonify
+from flask import Flask, url_for
 from bs4 import BeautifulSoup
 import requests
-from FactCheck import FactCheck
-from flask_cors import CORS, cross_origin
+from domain.FactCheck import FactCheck
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
 
+def has_no_empty_params(rule):
+    defaults = rule.defaults if rule.defaults is not None else ()
+    arguments = rule.arguments if rule.arguments is not None else ()
+    return len(defaults) >= len(arguments)
+
+
 @app.route('/')
 def index():
-    return '<b>Factcheck API - Working<b>'
+    links = []
+    for rule in app.url_map.iter_rules():
+        # Filter out rules we can't navigate to in a browser
+        # and rules that require parameters
+        if "GET" in rule.methods and has_no_empty_params(rule):
+            url = url_for(rule.endpoint, **(rule.defaults or {}))
+            links.append(url)
+    return '<b>Factcheck API - Working</b><hr><br><br>Available endpoints:<br>' + json.dumps(links)
 
 
 @app.route('/api/vrt', methods=['GET'])

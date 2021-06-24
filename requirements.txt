@@ -13,9 +13,6 @@ click==8.0.1
 colorama==0.4.4
 cymem==2.0.4
 Cython==0.29.21
-discord==1.0.1
-discord.py==1.5.1
-Django==3.1.5
 et-xmlfile==1.1.0
 Flask==2.0.1
 Flask-Cors==3.0.10
@@ -29,11 +26,9 @@ MarkupSafe==2.0.1
 mathparse==0.1.2
 multidict==4.7.6
 murmurhash==1.0.4
-numpy==1.19.4
 oauthlib==3.1.0
 openai==0.6.4
 openpyxl==3.0.7
-pandas==1.1.4
 preshed==3.0.4
 PySocks==1.7.1
 python-dateutil==2.8.1
@@ -50,7 +45,6 @@ sqlparse==0.4.1
 stem==1.8.0
 tld==0.12.5
 tqdm==4.61.0
-tweepy==3.8.0
 urllib3==1.25.9
 Werkzeug==2.0.1
 xlrd==2.0.1

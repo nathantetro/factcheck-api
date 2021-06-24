@@ -7,12 +7,6 @@ beautifulsoup4==4.9.3
 bs4==0.0.1
 certifi==2020.4.5.2
 chardet==3.0.4
-chatterbot==1.1.0a7
-chatterbot-corpus==1.2.0
-click==8.0.1
-colorama==0.4.4
-cymem==2.0.4
-Cython==0.29.21
 et-xmlfile==1.1.0
 Flask==2.0.1
 Flask-Cors==3.0.10

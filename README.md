@@ -11,7 +11,7 @@ Sites crawled:
 "FactCheckDescription" : Truth rating provided by the respective sites in its original form <br>
 "URL" : URL of the corresponding source page <br>
 "language" : Language of the factcheck. ("fr","nl") <br>
-"date" : : Date when the factcheck was published. <br>
+"date" :  Date when the factcheck was published. <br>
 "publisher" : Publisher of the factcheck (organization). <br>
 
 ## Usage

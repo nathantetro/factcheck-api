@@ -1,6 +1,6 @@
 # ⚙ Flemish Factcheck API
 
-This project crawls Flemish factchecking sites (sites listed below), extracts all the relevant information in a JSON and makes it available via a Python (Flask) RESTful API.
+This project crawls Flemish factchecking sites (sites listed below), extracts all the relevant information in a Postgresql database and makes it available via a Python (Flask) RESTful API in JSON format.
 
 Sites crawled:
 1. https://www.knack.be/nieuws/factcheck/

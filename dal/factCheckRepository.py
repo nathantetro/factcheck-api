@@ -40,7 +40,7 @@ def read_all_factchecks():
         row = cur.fetchone()
 
         while row is not None:
-            factchecks.append(FactCheck(row[0], row[1], row[2], row[3], row[4], row[5]).__dict__)
+            factchecks.append(FactCheck(row[0], row[1], row[4], row[2], row[5], row[3]).__dict__)
             row = cur.fetchone()
 
         cur.close()

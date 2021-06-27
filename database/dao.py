@@ -1,5 +1,8 @@
+import os
+
 import psycopg2
 from util.consoleColors import colors
+from boto.s3.connection import S3Connection
 
 
 def open_connection(initDatabase=False):
@@ -10,7 +13,7 @@ def open_connection(initDatabase=False):
         conn = psycopg2.connect(host="ec2-54-220-170-192.eu-west-1.compute.amazonaws.com",
                                 database="d750vbn9efqubn",
                                 user="wzzotxienhwpvw",
-                                password="6b32fbd24590a371c2abc09674c1d060cd2077d00c56c77011d5fab6f456a2aa")
+                                password=os.environ['DATABASE_PASS'])
         if initDatabase:
             init_database(connection=conn, dropCreate=True)
 

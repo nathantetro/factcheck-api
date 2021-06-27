@@ -10,9 +10,9 @@ def open_connection(initDatabase=False):
     try:
         # connect to the PostgreSQL server
         print(colors.BOLD + colors.OKGREEN + 'Connecting to the PostgreSQL database...' + colors.ENDC)
-        conn = psycopg2.connect(host="ec2-54-220-170-192.eu-west-1.compute.amazonaws.com",
-                                database="d750vbn9efqubn",
-                                user="wzzotxienhwpvw",
+        conn = psycopg2.connect(host=os.environ['DATABASE_HOST'],
+                                database=os.environ['DATABASE_NAME'],
+                                user=os.environ['DATABASE_USER'],
                                 password=os.environ['DATABASE_PASS'])
         if initDatabase:
             init_database(connection=conn, dropCreate=True)

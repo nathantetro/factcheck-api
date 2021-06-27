@@ -12,10 +12,7 @@ CORS(app)
 print(
     colors.BOLD + colors.HEADER + "*-*-*-*-*-*-*-* WELCOME TO FACTCHECK HUB API *-*-*-*-*-*-*-*" + colors.ENDC)
 
-factChecksInitialised = False
-while factChecksInitialised is False:
-    factCheckManager.init_factchecks(initDatabase=True)
-    factChecksInitialised = True
+factCheckManager.init_factchecks(initDatabase=True)
 
 
 @app.route('/')

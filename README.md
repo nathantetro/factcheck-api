@@ -16,3 +16,8 @@ Sites crawled:
 
 ## Usage
 Example: http://127.0.0.1:5000/api/knack 
+
+## 
+<a href="https://factcheck-scraper-api.herokuapp.com/">Deployed with Heroku. 
+<img src="https://cdn.iconscout.com/icon/free/png-256/heroku-225989.png" alt="HEROKU LOGO" width="25px" height="25px"></a>
+

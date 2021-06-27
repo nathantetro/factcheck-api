@@ -1,8 +1,8 @@
 class FactCheck:
 
-    def __init__(self, factCheckTitle, factCheckDescription, date, url, publisher, language):
-        self.factCheckTitle = factCheckTitle
-        self.factCheckDescription = factCheckDescription
+    def __init__(self, title, description, date, url, publisher, language):
+        self.title = title
+        self.description = description
         self.url = url
         self.language = language
         self.date = date

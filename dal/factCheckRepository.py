@@ -1,5 +1,6 @@
 import psycopg2
 from database import dao
+from domain.FactCheck import FactCheck
 from util.consoleColors import colors
 
 
@@ -21,8 +22,8 @@ def create_factcheck(factCheck):
     cur.execute(
         'INSERT INTO factchecks(title,description,url,language,date,publisher)'
         ' VALUES(%s, %s, %s,%s,%s,%s);',
-        (factCheck.factCheckTitle,
-         factCheck.factCheckDescription,
+        (factCheck.title,
+         factCheck.description,
          factCheck.url, factCheck.language, factCheck.date, factCheck.publisher))
 
     connection.commit()
@@ -35,11 +36,11 @@ def read_all_factchecks():
     try:
         conn = dao.open_connection()
         cur = conn.cursor()
-        cur.execute("SELECT * FROM factchecks")
+        cur.execute("SELECT title, description, url, language, date, publisher FROM factchecks")
         row = cur.fetchone()
 
         while row is not None:
-            factchecks.append(row)
+            factchecks.append(FactCheck(row[0], row[1], row[2], row[3], row[4], row[5]).__dict__)
             row = cur.fetchone()
 
         cur.close()
@@ -57,11 +58,12 @@ def read_factchecks_of_publisher(publisher):
     try:
         conn = dao.open_connection()
         cur = conn.cursor()
-        cur.execute("SELECT * FROM factchecks WHERE publisher='" + publisher + "'")
+        cur.execute(
+            "SELECT title, description, url, language, date, publisher FROM factchecks WHERE publisher='" + publisher + "'")
         row = cur.fetchone()
 
         while row is not None:
-            factchecks.append(row)
+            factchecks.append(FactCheck(row[0], row[1], row[2], row[3], row[4], row[5]).__dict__)
             row = cur.fetchone()
 
         cur.close()

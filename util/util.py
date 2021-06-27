@@ -21,5 +21,5 @@ def get_endpoints(app):
 
 
 def convert_factchecks_to_json(factChecks):
-    jsonFactChecks = json.dumps(factChecks, indent=4, ensure_ascii=False).encode('utf8')
+    jsonFactChecks = json.dumps(factChecks, indent=4, ensure_ascii=False, default=str).encode('utf8')
     return jsonFactChecks.decode()

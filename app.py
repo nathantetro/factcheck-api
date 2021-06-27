@@ -4,6 +4,7 @@ from flask_cors import CORS
 from util import util
 from business import factCheckManager
 from util.consoleColors import colors
+from util.util import convert_factchecks_to_json
 
 app = Flask(__name__)
 CORS(app)
@@ -19,11 +20,10 @@ def index():
     return '<b>Factcheck API - Working</b><hr><br><br>Available endpoints:<br>' + json.dumps(util.get_endpoints(app))
 
 
-@app.route('/api/all')
+@app.route('/api/all', methods=['GET'])
 def all_factchecks():
     response = app.response_class(
-        response=json.dumps(factCheckManager.get_all_factchecks(), indent=4, ensure_ascii=False, default=str).encode(
-            'utf8'),
+        response=convert_factchecks_to_json(factCheckManager.get_all_factchecks()),
         status=200,
         mimetype='application/json'
     )
@@ -32,10 +32,9 @@ def all_factchecks():
 
 @app.route('/api/vrt', methods=['GET'])
 def vrt():
+    jsonVrt = convert_factchecks_to_json(factCheckManager.get_factcheck_from_publisher("VRT"))
     response = app.response_class(
-        response=json.dumps(factCheckManager.get_factcheck_from_publisher("VRT"), indent=4, ensure_ascii=False,
-                            default=str).encode(
-            'utf8'),
+        response=jsonVrt,
         status=200,
         mimetype='application/json'
     )
@@ -45,8 +44,7 @@ def vrt():
 @app.route('/api/knack', methods=['GET'])
 def knack():
     response = app.response_class(
-        response=json.dumps(factCheckManager.get_factcheck_from_publisher("KNACK"), indent=4, ensure_ascii=False,
-                            default=str).encode('utf8'),
+        response=convert_factchecks_to_json(factCheckManager.get_factcheck_from_publisher("KNACK")),
         status=200,
         mimetype='application/json'
     )

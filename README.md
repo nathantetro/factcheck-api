@@ -8,7 +8,7 @@ Sites crawled:
 
 ## Features Extracted
 "title" : Textual statement of the claim which is being verified <br>
-"description" : Truth rating provided by the respective sites in its original form <br>
+"description" : Short description of the factcheck<br>
 "URL" : URL of the corresponding source page <br>
 "language" : Language of the factcheck. ("fr","nl") <br>
 "date" :  Date when the factcheck was published. <br>

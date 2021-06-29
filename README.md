@@ -7,7 +7,7 @@ Sites crawled:
 2. https://www.vrt.be/vrtnws/nl/rubrieken/desinformatie/check/
 
 ## Features Extracted
-"title" : Textual statement of the claim which is being verified <br>
+"title" : Title of the factcheck <br>
 "description" : Short description of the factcheck<br>
 "URL" : URL of the corresponding source page <br>
 "language" : Language of the factcheck. ("fr","nl") <br>

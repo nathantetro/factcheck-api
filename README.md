@@ -15,7 +15,7 @@ Sites crawled:
 "publisher" : Publisher of the factcheck (organization). <br>
 
 ## Usage
-Example: http://127.0.0.1:5000/api/knack 
+Run app.py. Wait until everything has been initilialized.<br> Then go to the app's url. For example: http://127.0.0.1:5000/api/knack
 
 ## 
 <a href="https://factcheck-scraper-api.herokuapp.com/">Deployed with Heroku. 

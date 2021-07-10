@@ -32,11 +32,12 @@ def scrape_vrt_factchecks():
         url = 'https://www.vrt.be' + block.find('a')['href']
         # The date of the factcheck article
         date = block.find('time')['datetime']
+        thumbnail = block.find('img')['src'][2:]
         try:
             title = title.text.replace('"', '')
             description = description.text
             # Create factcheck object
-            factCheck = FactCheck(title, description, datetime.strptime(date[:10], '%Y-%m-%d'), url, 'VRT', 'nl')
+            factCheck = FactCheck(title, description, datetime.strptime(date[:10], '%Y-%m-%d'), url, 'VRT', 'nl',thumbnail)
             # Add factcheck to the list
             factChecks.append(factCheck)
         except Exception as error:
@@ -93,8 +94,11 @@ def scrape_knack_factchecks():
             # Scrape the description
             description = knackFactCheckPage.find(class_="rmgDetail-intro").text
 
+            # Scrape thumbnail
+            thumbnail = "//"
+
             # Make factcheck object
-            factCheck = FactCheck(title, description, datetime.strptime(date, '%d/%m/%y'), url, 'KNACK', 'nl')
+            factCheck = FactCheck(title, description, datetime.strptime(date, '%d/%m/%y'), url, 'KNACK', 'nl',thumbnail)
 
             factChecks.append(factCheck)
         except Exception as error:

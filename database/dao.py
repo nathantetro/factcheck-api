@@ -39,7 +39,8 @@ def init_database(connection, dropCreate):
                 'url VARCHAR(300),' +
                 'language VARCHAR(2),'
                 'date DATE,' +
-                'publisher VARCHAR(20)' +
+                'publisher VARCHAR(20),' +
+                'thumbnail VARCHAR(100)'
                 ');')
 
     connection.commit()

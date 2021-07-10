@@ -20,11 +20,11 @@ def create_factcheck(factCheck):
 
     print(colors.OKGREEN + 'Inserting factcheck into database...' + colors.ENDC)
     cur.execute(
-        'INSERT INTO factchecks(title,description,url,language,date,publisher)'
+        'INSERT INTO factchecks(title,description,url,language,date,publisher,thumbnail)'
         ' VALUES(%s, %s, %s,%s,%s,%s);',
         (factCheck.title,
          factCheck.description,
-         factCheck.url, factCheck.language, factCheck.date, factCheck.publisher))
+         factCheck.url, factCheck.language, factCheck.date, factCheck.publisher, factCheck.thumbnail))
 
     connection.commit()
     cur.close()
@@ -36,11 +36,11 @@ def read_all_factchecks():
     try:
         conn = dao.open_connection()
         cur = conn.cursor()
-        cur.execute("SELECT title, description, url, language, date, publisher FROM factchecks")
+        cur.execute("SELECT title, description, url, language, date, publisher, thumbnail FROM factchecks")
         row = cur.fetchone()
 
         while row is not None:
-            factchecks.append(FactCheck(row[0], row[1], row[4], row[2], row[5], row[3]).__dict__)
+            factchecks.append(FactCheck(row[0], row[1], row[4], row[2], row[5], row[3], row[6]).__dict__)
             row = cur.fetchone()
 
         cur.close()
@@ -59,11 +59,11 @@ def read_factchecks_of_publisher(publisher):
         conn = dao.open_connection()
         cur = conn.cursor()
         cur.execute(
-            "SELECT title, description, url, language, date, publisher FROM factchecks WHERE publisher='" + publisher + "'")
+            "SELECT title, description, url, language, date, publisher, thumbnail FROM factchecks WHERE publisher='" + publisher + "'")
         row = cur.fetchone()
 
         while row is not None:
-            factchecks.append(FactCheck(row[0], row[1], row[2], row[3], row[4], row[5]).__dict__)
+            factchecks.append(FactCheck(row[0], row[1], row[2], row[3], row[4], row[5], row[6]).__dict__)
             row = cur.fetchone()
 
         cur.close()

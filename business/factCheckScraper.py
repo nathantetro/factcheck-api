@@ -32,7 +32,7 @@ def scrape_vrt_factchecks():
         url = 'https://www.vrt.be' + block.find('a')['href']
         # The date of the factcheck article
         date = block.find('time')['datetime']
-        thumbnail = block.find('img')['src'][2:]
+        thumbnail = block.find(_class='vrt-teaser__image').find('img')['data-srcset'].split('.jpg')[0][2:]
         try:
             title = title.text.replace('"', '')
             description = description.text

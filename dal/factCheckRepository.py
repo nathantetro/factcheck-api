@@ -21,7 +21,7 @@ def create_factcheck(factCheck):
     print(colors.OKGREEN + 'Inserting factcheck into database...' + colors.ENDC)
     cur.execute(
         'INSERT INTO factchecks(title,description,url,language,date,publisher,thumbnail)'
-        ' VALUES(%s, %s, %s,%s,%s,%s);',
+        ' VALUES(%s, %s, %s,%s,%s,%s,%s);',
         (factCheck.title,
          factCheck.description,
          factCheck.url, factCheck.language, factCheck.date, factCheck.publisher, factCheck.thumbnail))

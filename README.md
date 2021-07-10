@@ -7,13 +7,17 @@ Sites crawled:
 2. https://www.vrt.be/vrtnws/nl/rubrieken/desinformatie/check/
 
 ## Features Extracted
-"FactCheckTitle" : Textual statement of the claim which is being verified <br>
-"FactCheckDescription" : Truth rating provided by the respective sites in its original form <br>
+"title" : Title of the factcheck <br>
+"description" : Short description of the factcheck<br>
 "URL" : URL of the corresponding source page <br>
 "language" : Language of the factcheck. ("fr","nl") <br>
 "date" :  Date when the factcheck was published. <br>
 "publisher" : Publisher of the factcheck (organization). <br>
 
 ## Usage
-http://{host}/api/{publisher} <br>
-Example: http://127.0.0.1:5000/api/knack <br>
+Run app.py. Wait until everything has been initilialized.<br> Then go to the app's url. For example: http://127.0.0.1:5000/api/knack
+
+## 
+<a href="https://factcheck-scraper-api.herokuapp.com/">Deployed with Heroku. 
+<img src="https://cdn.iconscout.com/icon/free/png-256/heroku-225989.png" alt="HEROKU LOGO" width="25px" height="25px"></a>
+

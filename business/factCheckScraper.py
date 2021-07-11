@@ -96,7 +96,7 @@ def scrape_knack_factchecks():
             description = knackFactCheckPage.find(class_="rmgDetail-intro").text
 
             # Scrape thumbnail
-            thumbnail = knackFactCheckPage.find(class_="u-sm-100vw")['src']
+            thumbnail = knackFactCheckPage.find(class_="u-sm-100vw")['src'][8:]
 
             # Make factcheck object
             factCheck = FactCheck(title, description, datetime.strptime(date, '%d/%m/%y'), url, 'KNACK', 'nl',

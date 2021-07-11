@@ -33,7 +33,6 @@ def scrape_vrt_factchecks():
         # The date of the factcheck article
         date = block.find('time')['datetime']
         thumbnail = block.find('img')['data-src'][2:]
-        print(thumbnail)
         try:
             title = title.text.replace('"', '')
             description = description.text
@@ -97,7 +96,7 @@ def scrape_knack_factchecks():
             description = knackFactCheckPage.find(class_="rmgDetail-intro").text
 
             # Scrape thumbnail
-            thumbnail = "//"
+            thumbnail = knackFactCheckPage.find(class_="u-sm-100vw")['src']
 
             # Make factcheck object
             factCheck = FactCheck(title, description, datetime.strptime(date, '%d/%m/%y'), url, 'KNACK', 'nl',

@@ -40,7 +40,7 @@ def init_database(connection, dropCreate):
                 'language VARCHAR(2),'
                 'date DATE,' +
                 'publisher VARCHAR(20),' +
-                'thumbnail VARCHAR(100)'
+                'thumbnail VARCHAR(200)'
                 ');')
 
     connection.commit()

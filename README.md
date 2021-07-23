@@ -7,12 +7,14 @@ Sites crawled:
 2. https://www.vrt.be/vrtnws/nl/rubrieken/desinformatie/check/
 
 ## Features Extracted
-"title" : Title of the factcheck <br>
-"description" : Short description of the factcheck<br>
-"URL" : URL of the corresponding source page <br>
+"title" : Title of the factcheck. <br>
+"description" : Short description of the factcheck.<br>
+"URL" : URL of the article. <br>
 "language" : Language of the factcheck. ("fr","nl") <br>
 "date" :  Date when the factcheck was published. <br>
 "publisher" : Publisher of the factcheck (organization). <br>
+"thumbnail" : Thumbnail of the article. <br>
+
 
 ## Usage
 Run app.py. Wait until everything has been initilialized.<br> Then go to the app's url. For example: http://127.0.0.1:5000/api/knack
